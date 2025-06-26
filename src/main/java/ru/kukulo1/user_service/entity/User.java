@@ -19,10 +19,12 @@ public class User implements UserDetails {
     @Getter
     @Setter
     private Long id;
-    @Size(min = 5, message = "Username must contain at least 5 characters")
+    @Size(min = 5, max = 255, message = "Username must be 5-255 characters long")
+    @Column(nullable = false)
     @Setter
     private String username;
-    @Size(min = 5, message = "Password must contain at least 5 characters")
+    @Size(min = 5, max = 255, message = "Password must be 5-255 characters long")
+    @Column(nullable = false)
     @Setter
     private String password;
     @Transient
