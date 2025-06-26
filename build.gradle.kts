@@ -13,6 +13,9 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
+application {
+	mainClass = "ru.kukulo1.user_service.UserServiceApplication"
+}
 
 configurations {
 	compileOnly {
