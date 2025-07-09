@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" th:href="@{/resources/css/style.css}">
+</head>
+<body>
+<div>
+    <h3 th:text="${#authentication.name}">Пользователь</h3>
+
+    <div sec:authorize="!isAuthenticated()">
+        <h4><a th:href="@{/login}">Войти</a></h4>
+        <h4><a th:href="@{/registration}">Зарегистрироваться</a></h4>
+    </div>
+
+    <div sec:authorize="isAuthenticated()">
+        <h4><a th:href="@{/logout}">Выйти</a></h4>
+    </div>
+
+    <h4><a th:href="@{/news}">Новости (только пользователь)</a></h4>
+    <h4><a th:href="@{/admin}">Пользователи (только админ)</a></h4>
+</div>
+</body>
+</html>
