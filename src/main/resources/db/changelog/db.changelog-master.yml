@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/001-init-schema.yml
   - include:
       file: db/changelog/002-rename-user-table.yml
+  - include:
+      file: db/changelog/003-reassign-fk-for-user-table.yml
