@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: reassign-fk-for-user-table
+      author: kukulo1
+      changes:
+        - dropForeignKeyConstraint:
+              baseTableName: user_roles
+              constraintName: fk_user_roles_user
+        - addForeignKeyConstraint:
+            baseTableName: user_roles
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_user_roles_users
+
+
